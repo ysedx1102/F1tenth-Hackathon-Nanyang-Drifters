@@ -37,7 +37,7 @@ map_img_ext: '.png'
 ```
 Change the `Spielberg_map` to `Nuerburgring_map`
 
-and then press `Ctrl+X` to exit. Press "Y" to save your changes.
+and then press `Ctrl+X` to exit. Press "Y" to save your changes. Click `Enter` to confirm the file name and exit.
 
 ## 5. Now, before launching the simulator again, 
 rebuild the workplace:
