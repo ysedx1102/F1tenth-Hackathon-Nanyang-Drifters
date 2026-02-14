@@ -1,0 +1,74 @@
+# Nürburgring Parameter Configuration
+# Quick tuning guide for hackathon
+
+gap_follower:
+  ros__parameters:
+    # ========== SPEED SETTINGS ==========
+    # Start conservative, then increase
+    max_speed: 6.0          # [TUNE THIS FIRST] Try: 5.0, 6.0, 7.0, 8.0
+    min_speed: 1.5          # Minimum speed in tight turns
+    
+    # ========== STEERING BEHAVIOR ==========
+    steering_gain: 0.5      # [IMPORTANT] Higher = sharper turns (0.3-0.7)
+    speed_gain: 0.7         # [IMPORTANT] Higher = slower in turns (0.5-1.5)
+    max_steering: 0.34      # Physical limit (don't change unless you know your robot)
+    
+    # ========== PERCEPTION ==========
+    lookahead_distance: 6.0     # [TUNE] How far ahead to look (4.0-8.0m)
+    field_of_vision: 1.88       # ~108 degrees (π * 0.6)
+    disparity_threshold: 0.4    # Wall edge detection sensitivity (0.3-0.6)
+    
+    # ========== SAFETY MARGINS ==========
+    obstacle_bubble_radius: 0.12    # [CRITICAL] Safety bubble size (0.10-0.20)
+    disparity_bubble_radius: 0.12   # Wall corner safety (0.10-0.20)
+    
+    # ========== ADVANCED FEATURES ==========
+    # Turn these on/off to test
+    smooth_steering: true           # Reduces oscillation
+    steering_smoothing_alpha: 0.3   # How much smoothing (0.1-0.5)
+    adaptive_speed: true            # Speed up in wide gaps
+    gap_width_bonus: 0.5           # Extra speed in wide gaps (0.0-1.0)
+    
+    # ========== DEBUG ==========
+    debug_mode: true        # Set false for final race (reduces CPU load)
+    
+    # ========== ROS TOPICS ==========
+    lidarscan_topic: '/scan'
+    drive_topic: '/drive'
+    
+    # ========== LESS IMPORTANT ==========
+    robot_width: 0.2032
+    consecutive_valid_gap: 5
+
+# ============================================
+# TUNING PRESETS FOR DIFFERENT TRACK SECTIONS
+# ============================================
+
+# PRESET 1: CONSERVATIVE (for learning/debugging)
+# max_speed: 4.0
+# obstacle_bubble_radius: 0.18
+# steering_gain: 0.4
+
+# PRESET 2: BALANCED (good starting point)
+# max_speed: 6.0
+# obstacle_bubble_radius: 0.12
+# steering_gain: 0.5
+# speed_gain: 0.7
+
+# PRESET 3: AGGRESSIVE (for experienced tuning)
+# max_speed: 8.0
+# obstacle_bubble_radius: 0.10
+# steering_gain: 0.6
+# speed_gain: 0.5
+# lookahead_distance: 7.0
+
+# PRESET 4: TIGHT SECTIONS (hairpins, chicanes)
+# max_speed: 5.0
+# min_speed: 2.0
+# disparity_threshold: 0.3
+# field_of_vision: 2.09  # 120 degrees
+
+# PRESET 5: FAST SECTIONS (straights, gentle curves)
+# max_speed: 8.0
+# lookahead_distance: 8.0
+# steering_smoothing_alpha: 0.2  # Less smoothing for responsiveness
