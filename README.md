@@ -92,7 +92,7 @@ Our journey from a basic implementation that couldn't complete a single lap to a
 *[GIF: Car stuck at first corner, steering frozen]*
 
 ### Version 6: FINAL - Fast then Stable
-*[GIF: Car doing 1:08 lap then settling into 1:30 cruise for 17 laps]*
+![项目运行效果图](./assets/gap_finder_forever.gif)
 
 ---
 
