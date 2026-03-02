@@ -173,12 +173,68 @@ Problem: Traditional gap followers must choose between:
 
 | Metric | Value |
 |------|------|
-| **🏁 Fastest Lap** | 1:11.49 |
-| **🔄 Consecutive Laps** | 17+ (manual stop) |
-| **⚡ Average Lap Time** | 1:49 |
+| **🏁 Fastest Lap** | 1:08.49 |
+| **🔄 Consecutive Laps** | 20+ (manual stop) |
+| **⚡ Average Lap Time** | 1:45 |
 
 ## 8. How to Run?
-
+### 1. `Win+R` to open terminal. We need 2 terminals total.
+### 2. Follow the notes of NTU-Autonomous-Racing-Team for the first-time setup of hackathons.
+### 3. From the second time, type `wsl` to open WSL.
+### 4. Open Docker on your Desktop for later setup.
+### 5. Both terminals do following steps:
+  - a. Setting up docker container
+    ```
+    cd ~/F1Tenth_Workshop_2526/install_windows/
+    sudo docker network create f1tenth_net
+    sudo docker build -t f1tenth_gym_ros .
+    ```
+  - b. Run this script to start the docker container
+    ```
+    sudo ./run_docker_container_win.sh
+    ```
+### Now, since we have 2 terminals, the first one is for loading the simulator (the map), the second one is for driving the car (the algorithms)
+### 6. In your 1st terminal, 
+  - a. run
+    ```
+    source /opt/ros/foxy/setup.bash
+    cd sim_ws
+    source ./install/local_setup.bash
+    ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+    ```
+  - b. You will see the simulator, press `ctrl+c` to stop it.
+  - c. Open the sim.yaml, you should see A GNU text nano editor.
+    ```
+    nano src/f1tenth_gym_ros/config/sim.yaml
+    ```
+  - d. Find these two lines of code by scrolling down.
+      ```
+      map_path: '/sim_ws/src/f1tenth_gym_ros/maps/levine'
+      map_img_ext: '.png'
+      ```
+      Change the `levine` to `Nuerburgring_map`
+      and then press `Ctrl+X` to exit. Press "Y" to save your changes. Click `Enter` to confirm the file name and exit.
+  - e. Now, before launching the simulator again, rebuild the workplace:
+    ```
+    colcon build
+    source install/local_setup.bash
+    ```
+  - f. Finally, your map has been changed and you're ready to race!
+    ```
+    ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+    ```
+### 7. In your 2nd terminal, 
+  - a. Do this:
+    ```
+    source /opt/ros/foxy/setup.bash
+    cd sim_ws
+    source ./install/local_setup.bash
+    ```
+  - b. Type in your algorithm's name (need to put in the f1simulator folder inside ubuntu)
+    ```
+    cd /f1tenth_workshop/f1tenth_simulator
+    python3 `your algorithm name`.py
+    ```
 
 ## 9. 🙏 ACKNOWLEDGMENTS
 F1TENTH Organization for this amazing competition
