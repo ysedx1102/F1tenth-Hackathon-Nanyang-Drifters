@@ -26,7 +26,6 @@ Our journey from a basic implementation that couldn't complete a single lap to a
 
 | Name | Role | Year |
 |------|------|------|
-| **Balodi Shalok** | Algorithm Developer | CSC / Y2 |
 | **Paul Tamoghna** | Control Systems | CE / Y1 |
 | **Tan Yi** | Parameter Optimization | MAE / Y1 |
 | **Lee Yan Sheng** | Testing & Validation | MAE / Y2 |
