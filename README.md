@@ -89,7 +89,7 @@ Our journey from a basic implementation that couldn't complete a single lap to a
 *[GIF: Car flying at 7.5 m/s]*
 
 ### Version 5: 1:00 - The One That Died
-*[GIF: Car stuck at first corner, steering frozen]*
+![项目运行效果图](./assets/gap_finder_1m.gif)
 
 ### Version 6: FINAL - Fast then Stable
 ![项目运行效果图](./assets/gap_finder_forever.gif)
