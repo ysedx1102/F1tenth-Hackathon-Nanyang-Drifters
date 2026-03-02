@@ -76,22 +76,19 @@ Our journey from a basic implementation that couldn't complete a single lap to a
 
 ## 4. 🎥 DEMO
 
-### Version 1: Base Gap Follower
-*[GIF: Car crashing immediately]*
+### Version 1: v3 - Oscillation on Straights
+![项目运行效果图](./assets/gap_finder_improved_v3.gif)
 
-### Version 2: v3 - Oscillation on Straights
-*[GIF: Car wobbling on straight]*
+### Version 2: v13 - First Stable 1:50
+![项目运行效果图](./assets/gap_finder_1m50s.gif)
 
-### Version 3: v13 - First Stable 1:50
-*[GIF: Car smoothly doing 1:50 laps]*
+### Version 3: 1:08 Beast Mode
+![项目运行效果图](./assets/gap_finder_beast.gif)
 
-### Version 4: 1:08 Beast Mode
-*[GIF: Car flying at 7.5 m/s]*
-
-### Version 5: 1:00 - The One That Died
+### Version 4: 1:00 - The One That Died
 ![项目运行效果图](./assets/gap_finder_1m.gif)
 
-### Version 6: FINAL - Fast then Stable
+### Version 5: FINAL - Fast then Stable
 ![项目运行效果图](./assets/gap_finder_forever.gif)
 
 ---
